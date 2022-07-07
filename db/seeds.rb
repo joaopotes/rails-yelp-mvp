@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 puts "cleaning up database"
 Restaurant.destroy_all
 puts "database is clean"
@@ -15,7 +16,8 @@ puts "creating restaurants..."
 restaurant = Restaurant.create(
   name: Faker::Restaurant.name,
   address: Faker::Address.street_address,
-  phone_number: Faker::PhoneNumber.cell_phone
+  phone_number: Faker::PhoneNumber.cell_phone,
+  category: ['chinese', 'italian', 'japanese', 'french', 'belgian'].sample
 )
 puts "restaurant #{restaurant.id} is created"
 end
